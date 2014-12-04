@@ -1,42 +1,78 @@
 package Ecevit;
 
-
-
-
 public class Flaeche {
 	private double pi; 
 
 	public  Flaeche(){
 		this.pi = 3.14159;
 	}
-	
-	/**
-	 * Zum beraechnen der Flaeche vom Rechteck
-	 * @param laenge angabe in int die laenge
-	 * @param breite angabe in int die breite
-	 * @return laenge mal breite 
-	 */
-	public int Rechteck(int laenge, int breite){
-		return breite * laenge;
+	//--------------------------------------------------
+	public class Rechteck{
+		private int laenge;
+		private int breite;
+		private int flaeche;
+		
+		public Rechteck(int laenge, int breite){
+			this.breite = breite;
+			this.laenge = laenge;
+			this.flaeche = this.laenge * this.breite;
+		}
+		
+		public void set(int laenge, int breite){
+			this.breite = breite;
+			this.laenge = laenge;
+			
+			this.flaeche = this.breite*this.laenge;
+		}
+		
+		public int get(){
+			return flaeche;
+		}
 	}
 	
-	/**
-	 *Zum beraechnen der Flaeche vom Kreis
-	 * @param radius
-	 * @return pi mal radius^2
-	 */
-	public int Kreis(int radius){
-		return (int) (pi*(radius*radius));	
-	}
+	//--------------------------------------------------
 	
-	/**
-	 * Zum beraechnen der Flaeche vom  Dreicek
-	 * @param laenge
-	 * @param breite
-	 * @return laenge mal breite durch 2
-	 */
-	public int Dreieck(int laenge, int breite){
-		return (laenge*breite)/2;
-	}
+	public class Kreis{
+		private int radius;
+		
+		public Kreis(int radius){
+			this.radius = radius;
+		}
 
+		public int getFlaeche() {
+			return (int) ((this.radius*this.radius)*pi);
+		}
+
+		public void setRadius(int radius) {
+			this.radius = radius;
+		}
+		
+	}
+	
+	//--------------------------------------------------
+	
+	public class Dreieck{
+		private int laenge;
+		private int breite;
+	
+		
+		public Dreieck(int laenge, int breite){
+			this.breite = breite;
+			this.laenge = laenge;
+		}
+
+
+		public void setLaenge(int laenge) {
+			this.laenge = laenge;
+		}
+
+		public int getFlaeche() {
+			return (breite*laenge)/2;
+		}
+
+		public void setBreite(int breite) {
+			this.breite = breite;
+		}
+		
+	}
 }
