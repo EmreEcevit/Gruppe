@@ -1,7 +1,3 @@
-package Ecevit;
-
-
-
 
 public class Flaeche {
 	private double pi; 
